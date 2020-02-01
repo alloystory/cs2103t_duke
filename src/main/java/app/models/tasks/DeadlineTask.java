@@ -1,11 +1,11 @@
-package app.core;
+package app.models.tasks;
 
-import app.util.Date;
+import app.models.DateTime;
 
 public class DeadlineTask extends Task {
-    private Date deadline;
+    private DateTime deadline;
 
-    public DeadlineTask(String description, Date deadline) {
+    public DeadlineTask(String description, DateTime deadline) {
         super(description);
         this.deadline = deadline;
     }

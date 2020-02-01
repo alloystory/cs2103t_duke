@@ -1,4 +1,4 @@
-package app.util;
+package app.models;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -6,7 +6,7 @@ import java.time.format.DateTimeParseException;
 
 import app.exceptions.WrongDateTimeFormatException;
 
-public class Date {
+public class DateTime {
     private LocalDateTime date;
     private DateTimeFormatter formatter;
 
@@ -14,7 +14,7 @@ public class Date {
     public static final String DEFAULT_OUTPUT_FORMAT = "MMM d yyyy hh:mma";
     public static final String DEFAULT_STORAGE_FORMAT = "yyyyMMddHHmmss";
 
-    private Date(String dateTimeStr, String format) throws WrongDateTimeFormatException {
+    private DateTime(String dateTimeStr, String format) throws WrongDateTimeFormatException {
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
             this.date = LocalDateTime.parse(dateTimeStr, formatter);
@@ -24,26 +24,26 @@ public class Date {
         }
     }
 
-    private Date(LocalDateTime date, DateTimeFormatter formatter) {
+    private DateTime(LocalDateTime date, DateTimeFormatter formatter) {
         this.date = date;
         this.formatter = formatter;
     }
 
-    public static Date from(String dateTimeStr) throws WrongDateTimeFormatException {
-        return new Date(dateTimeStr, DEFAULT_INPUT_FORMAT);
+    public static DateTime from(String dateTimeStr) throws WrongDateTimeFormatException {
+        return new DateTime(dateTimeStr, DEFAULT_INPUT_FORMAT);
     }
 
-    public static Date fromFormat(String dateTimeStr, String format) throws WrongDateTimeFormatException {
-        return new Date(dateTimeStr, format);
+    public static DateTime fromFormat(String dateTimeStr, String format) throws WrongDateTimeFormatException {
+        return new DateTime(dateTimeStr, format);
     }
 
-    public static Date fromStorage(String dateTimeStr) throws WrongDateTimeFormatException {
-        return new Date(dateTimeStr, DEFAULT_STORAGE_FORMAT);
+    public static DateTime fromStorage(String dateTimeStr) throws WrongDateTimeFormatException {
+        return new DateTime(dateTimeStr, DEFAULT_STORAGE_FORMAT);
     }
 
-    public Date withFormat(String outputFormat) {
+    public DateTime withFormat(String outputFormat) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(outputFormat);
-        return new Date(this.date, formatter);
+        return new DateTime(this.date, formatter);
     }
 
     public String toStorage() {

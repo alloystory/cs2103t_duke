@@ -25,7 +25,7 @@ A JavaFX application is like a play you are directing. Instead of creating props
 
 ### If you are using Gradle
 
-Update your `build.gradle` to include the following lines:
+UpDateTime your `build.gradle` to include the following lines:
 ```groovy
 repositories {
     mavenCentral()

@@ -1,7 +1,7 @@
 package app.exceptions;
 
-public class WrongDateTimeFormatException extends BaseException {
-    public WrongDateTimeFormatException(String message) {
+public class WrongDateTimeTimeFormatException extends BaseException {
+    public WrongDateTimeTimeFormatException(String message) {
         super(message);
     }
 }

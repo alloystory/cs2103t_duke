@@ -1,9 +1,9 @@
-package app.core;
+package app.models;
 
 import java.util.List;
 
-import app.util.Date;
-import app.exceptions.WrongDateTimeFormatException;
+import app.util.DateTime;
+import app.exceptions.WrongDateTimeTimeFormatException;
 import app.exceptions.WrongUsageException;
 
 public class TaskManager{
@@ -20,20 +20,20 @@ public class TaskManager{
         return this.add(new Task(args));
     }
 
-    public String addDeadlineTask(String args) throws WrongUsageException, WrongDateTimeFormatException {
+    public String addDeadlineTask(String args) throws WrongUsageException, WrongDateTimeTimeFormatException {
         String[] splitArgs = args.split("/by");
         if (splitArgs.length != 2) throw new WrongUsageException("Usage: deadline <description> /by <deadline>");
 
-        Date date = Date.fromFormat(splitArgs[1].trim(), Date.DEFAULT_INPUT_FORMAT);
-        return this.add(new DeadlineTask(splitArgs[0].trim(), date));
+        DateTime DateTime = DateTime.fromFormat(splitArgs[1].trim(), DateTime.DEFAULT_INPUT_FORMAT);
+        return this.add(new DeadlineTask(splitArgs[0].trim(), DateTime));
     }
 
-    public String addEventTask(String args) throws WrongUsageException, WrongDateTimeFormatException {
+    public String addEventTask(String args) throws WrongUsageException, WrongDateTimeTimeFormatException {
         String[] splitArgs = args.split("/at");
         if (splitArgs.length != 2) throw new WrongUsageException("Usage: event <description> /at <when>");
 
-        Date date = Date.fromFormat(splitArgs[1].trim(), Date.DEFAULT_INPUT_FORMAT);
-        return this.add(new EventTask(splitArgs[0].trim(), date));
+        DateTime DateTime = DateTime.fromFormat(splitArgs[1].trim(), DateTime.DEFAULT_INPUT_FORMAT);
+        return this.add(new EventTask(splitArgs[0].trim(), DateTime));
     }
 
     public String setTaskDone(String args) throws WrongUsageException {

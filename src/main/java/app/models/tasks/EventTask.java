@@ -1,11 +1,11 @@
-package app.core;
+package app.models.tasks;
 
-import app.util.Date;
+import app.models.DateTime;
 
 public class EventTask extends Task {
-    private Date when;
+    private DateTime when;
 
-    public EventTask(String description, Date when) {
+    public EventTask(String description, DateTime when) {
         super(description);
         this.when = when;
     }

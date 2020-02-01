@@ -7,13 +7,13 @@ import app.exceptions.WrongCommandException;
 import app.core.UserInterface;
 import app.core.TaskManager;
 
-public class Duke {
+public class Chatbot {
     public static final int MAX_TASKS = 100;
     public static final String WELCOME_MESSAGE = "Wussup Dawggg! I'm Dukeee\nWhat you want me do?";
     public static final String GOODBYE_MESSAGE = "Bye!\nStay cool bruh! (((:";
 
     private UserInterface userInterface;
-    public Duke() {
+    public Chatbot() {
         this.userInterface = new UserInterface();
     }
     

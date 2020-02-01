@@ -10,7 +10,7 @@ JavaFX has an _event-driven architecture style_. As such, we programmatically de
 
 For Duke, there are two events that we want to respond to, namely the user pressing `Enter` in the `TextField` and left-clicking the `Button`. These are the `onAction` event for the `TextField` and the `onMouseClicked` event for the `Button`.
 
-For now, let’s have the application add a new `Label` with the text from the `TextField`. Update the `Main` class as follows. You'll need to add an `import javafx.scene.control.Label;` too.
+For now, let’s have the application add a new `Label` with the text from the `TextField`. UpDateTime the `Main` class as follows. You'll need to add an `import javafx.scene.control.Label;` too.
 ```java
 @Override
 public void start(Stage stage) {
@@ -51,7 +51,7 @@ Run the program and give it a whirl!
 
 At first glance everything appears to work perfectly. However, when the `VBox` stretches beyond the confines of the `ScrollPane`, the `ScrollPane` does not scroll down automatically as expected. We can remedy this by attaching a handler on the `VBox` to react to its own size changing and scrolling the `ScrollPane` down.
 
-Update the `start` method as shown below.
+UpDateTime the `start` method as shown below.
 
 ```java
 public void start(Stage stage) {
@@ -94,7 +94,7 @@ public class DialogBox extends HBox {
 }
 ```
 
-We use the code in our main class just like any other control. Here are the steps to update the code to use the custom control in `Main.java`.
+We use the code in our main class just like any other control. Here are the steps to upDateTime the code to use the custom control in `Main.java`.
 
 First, add these imports:
 ```java
@@ -146,7 +146,7 @@ private String getResponse(String input) {
 }
 ```
 
-Update the event handler code in the `start` method to use the new `handleUserInput` method:
+UpDateTime the event handler code in the `start` method to use the new `handleUserInput` method:
 ```java
 
 @Override
@@ -194,7 +194,7 @@ public static DialogBox getDukeDialog(Label l, ImageView iv) {
 }
 ```
 
-You'll need to update the imports as follows:
+You'll need to upDateTime the imports as follows:
 ```java
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

@@ -1,7 +1,7 @@
-package app.core;
+package app.models.tasks;
 
-import app.util.Date;
-import app.exceptions.WrongDateTimeFormatException;
+import app.models.DateTime;
+import app.exceptions.WrongDateTimeTimeFormatException;
 
 public class Task {
     protected String description;
@@ -27,11 +27,11 @@ public class Task {
 
             Task output;
             if (type.equals("D")) {
-                Date date = Date.fromStorage(parsedArgs[3]);
-                output = new DeadlineTask(parsedArgs[1], date);
+                DateTime DateTime = DateTime.fromStorage(parsedArgs[3]);
+                output = new DeadlineTask(parsedArgs[1], DateTime);
             } else if (type.equals("E")) {
-                Date date = Date.fromStorage(parsedArgs[3]);
-                output = new EventTask(parsedArgs[1], date);
+                DateTime DateTime = DateTime.fromStorage(parsedArgs[3]);
+                output = new EventTask(parsedArgs[1], DateTime);
             } else {
                 output = new Task(parsedArgs[1]);
             }
@@ -41,7 +41,7 @@ public class Task {
             }
             
             return output;
-        } catch (WrongDateTimeFormatException e) {
+        } catch (WrongDateTimeTimeFormatException e) {
             return null;
         }
     }
